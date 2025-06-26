@@ -32,7 +32,7 @@ def dump(toml_dict: dict, table="")->str:
     return "\n".join(toml)
 
 
-config = {
+DEFAULT_CONFIG = {
     "time_to_delete": {
         "days":45.0
     },
@@ -55,6 +55,8 @@ def get_files_walk(start_path='.')->list[str]:
     return d
 
 def main():
+    config = DEFAULT_CONFIG.copy()
+
     if os.path.exists("config.toml"):
         with open("config.toml", mode="rb") as file:
             config = tomli.load(file)
