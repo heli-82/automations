@@ -1,0 +1,4 @@
+directories = ["~/Downloads"]
+
+[time_to_delete]
+days = 45.0
